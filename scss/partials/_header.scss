@@ -1,0 +1,165 @@
+body {
+	margin: 0;
+	padding: 0;
+	font-family: Lato
+}
+.page_container {
+	@include sizePage(100%,100%);
+	max-width: 1400px;
+	margin: auto;
+}
+
+.main_width {
+	width: 75%;
+}
+
+/*header*/
+header {
+	@include imageProperties(url("../images/header.png"), cover, center, no-repeat);
+	height: 900px;
+	@include flexBox(column,initial,center,nowrap);
+}
+.site_name {
+	@include imageProperties(url("../images/Bhagaskara_title.png"), contain, center, no-repeat);
+	@include sizePage(70%, 25vh);
+	margin: 3% 0 3% 0;
+	cursor:pointer;
+}
+.text {
+	width: 70%;
+	p {
+		text-align: center;
+		color: white;
+	}
+	p:nth-child(1) {
+		font-size: 30px;
+	}
+	p:nth-child(2) {
+		font-size: 20px;
+	}
+}
+.header_buttons {
+	@include flexBox(row,center,flex-end,wrap);
+	margin-top: 4%;
+	@include sizePage(75%,40%);
+}
+.top {
+	align-self: flex-start;
+}
+.buttons_bgr_image {
+	@include imageProperties(url("../images/grey_oval.png"), contain, center, no-repeat);
+	@include sizePage(157px,167px);
+	@include flexBox(column,center,center,nowrap);
+	color: white;
+	img {
+		@include sizePage(51px,51px);
+	}
+	&:hover {
+		background-image: url("../images/purple_oval.png");
+		transition: 0.6s;
+	}
+}
+.scroll_down {
+	margin-top: 50px;
+	@include imageProperties(url("../images/grey_oval.png"), contain, center, no-repeat);
+	@include sizePage(62px,87px);
+	@include flexBox(row,center,center,nowrap);
+	img {
+	 	margin-top: 20%;
+	}
+	&:hover {
+		background-image: url("../images/purple_oval.png");
+		transition: 0.6s;
+	}
+}
+/*nav*/
+nav {
+	background-color: white;
+	@include sizePage(100%,100%);
+	@include flexBox(row,center,center,nowrap);
+	.main_width {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+	}
+.menu {
+	z-index:1;
+}
+	ul {	
+		list-style-type: none;
+		@include flexBox(row,center,initial,wrap);
+		-webkit-padding-start: 0px;
+		li {
+			display: inline-block;
+			margin-left: 20px;
+		}
+		a {
+			text-decoration: none;
+			color: black;
+			&:hover {
+				color: purple;
+			}
+		}
+	}	
+}
+.rwd_menu {
+	@include imageProperties(url("../images/hamburger.png"), contain, center, no-repeat);
+	@include sizePage(10vw,5vh);
+	z-index:2;
+}
+.hidden {
+	display: none;
+}
+.horizontal{
+	display: inline-block !important;
+}
+.horizontal > ul {
+		margin-top: 20px;
+		li {
+			display:inline-block;
+			margin-left: 20px;
+		}
+	}
+.sticky + .horizontal {
+		ul {
+			margin-top: 46px;
+		}
+		li {	
+			display:inline-block;
+			margin-left: 20px;
+		}
+	}
+@media all and (min-width: 761px) {
+	.horizontal > ul {
+		li {
+			display: inline-block;
+		}
+	}
+}
+.sticky{
+    position: fixed;
+    top: 0;
+    left: 0;
+   	background-color: white;
+   	opacity: 1;
+   	width: 100%;
+   	ul {
+   		@include sizePage(100%,100%);
+   		li {
+   		margin-left: 3%;
+   		}
+   	}
+   	&:hover {
+   		opacity: 1;
+   		background-color: white;
+   		//border: 1px solid purple;
+   	}
+}
+.sticky1{
+    position: fixed;
+    top: 0;
+    left: 0;
+  	text-align: center;
+   	width: 100%;
+   	background-color: white;
+}

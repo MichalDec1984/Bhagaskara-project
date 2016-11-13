@@ -1,0 +1,83 @@
+/*section "Footer"*/
+footer {
+	height: 100%;
+	background-color: white;
+	@include flexBox(row,center,initial,nowrap);
+	.main_width {
+		@include flexBox(column,space-between,center,nowrap);
+	}
+}
+.form {
+	width: 90%;
+}
+.error_message1, .error_message2, .error_message3 {
+	color: red;
+}
+label, input {
+	display: block;
+ }
+input {
+	margin: 25px 0;
+	@include sizePage(96%,65px);
+ 	border: 1px solid purple;
+}
+textarea  {
+	@include sizePage(96%,185px);
+ 	margin-top: 25px;
+ 	border: 1px solid purple;
+ 	resize: none;
+}
+.submit {
+	@include sizePage(200px,50px);
+	background-color: purple;
+	border: purple;
+	border-radius: 5%;
+	color: white;
+	box-shadow: 0 3px #888888;
+	&:hover {
+		box-shadow: 0 -3px #888888;
+		background-color: white;
+		color: purple;
+		transition: 1s;
+	}
+}
+.footer_first_row {
+	@include imageProperties(url("../images/get_in_touch.png"), contain, center, no-repeat);
+	@include sizePage(220px,75px);
+	margin-top: 5%;
+	margin-bottom: 5%;
+}
+.footer_second_row {
+	@include flexBox(row,space-between,initial,nowrap);
+	.contact_container {
+		@include sizePage(40%,20%);
+		@include flexBox(column,space-between,initial,nowrap);
+		p {
+			margin-top: 20px;
+			font-size: 18px;
+			text-align: justify;
+			display: block;
+			width: 100%;
+		}
+		.social_media_icons {
+			margin-top: 5%;
+			width: 80%;
+			.Twitter {
+				@include imageProperties(url("../images/twitter.png"), contain, center, no-repeat);
+			}
+			.FB, .Google, .Twitter {
+				@include sizePage(60px,60px);
+			}
+		}
+		.contact_paragraph {
+			width: 100%;
+		}
+	}
+}
+.footer_third_row {
+	margin-top: 5%;
+	margin-bottom: 5%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}

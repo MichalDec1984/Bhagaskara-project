@@ -1,0 +1,265 @@
+/*section "Build with love"*/
+.first_section {
+	background-color: rgb(242, 242, 242);
+	@include flexBox(row,center,initial,nowrap);
+}
+.four_icons{
+	margin: 5% 0 5% 0;
+	height: 100%;
+	@include flexBox(row,space-between,center,wrap);
+}
+.column {
+	@include flexBox(column,center,center,nowrap);
+	@include sizePage(200px,300px);
+	margin: 0 1% 0 1%;
+	text-align: center;
+}
+.heart_icon {
+	@include imageProperties(url("../images/grey_heart.png"), contain, center, no-repeat);
+	@include sizePage(157px,167px);
+	&:hover {
+		background-image: url("../images/purple_heart.png");
+		transition: 0.6s;
+	}
+}
+.diamond_icon {
+	@include imageProperties(url("../images/grey_diamond.png"), contain, center, no-repeat);
+	@include sizePage(157px,167px);
+	&:hover {
+		background-image: url("../images/purple_diamond.png");
+		transition: 0.6s;
+	}	
+}
+.bin_icon {
+	@include imageProperties(url("../images/grey_cup.png"), contain, center, no-repeat);
+	@include sizePage(157px,167px);
+	&:hover {
+		background-image: url("../images/purple_cup.png");
+		transition: 0.6s;
+	}
+}
+.phone_icon {
+	@include imageProperties(url("../images/grey_phone.png"), contain, center, no-repeat);
+	@include sizePage(157px,167px);
+	&:hover {
+		background-image: url("../images/purple_phone.png");
+		transition: 0.6s;
+	}
+}
+/*section "About us"*/
+.about_us {
+	background-color: white;
+	@include flexBox(row,center,initial,nowrap);
+	height: 600px;
+	.main_width {
+		@include flexBox(column,space-around,center,nowrap);
+	}
+}
+.about_us_first_row {
+	margin: 5% 0 5% 0;
+	@include imageProperties(url("../images/about_us.png"), contain, center, no-repeat);
+	@include sizePage(220px,75px);
+}
+.about_us_second_row {
+	@include flexBox(row,center,initial,wrap);
+}
+.monitors {
+	@include imageProperties(url("../images/monitor.png"), contain, center, no-repeat);
+	@include sizePage(560px,335px);
+}
+.learn_more {
+	@include flexBox(column,space-between,initial,nowrap);
+	width: 300px;
+	p {
+	margin-top: 0;
+	}
+}
+button {
+	@include sizePage(200px,50px);
+	background-color: purple;
+	border: purple;
+	border-radius: 5%;
+	color: white;
+	box-shadow: 0 3px #888888;
+	&:hover {
+		box-shadow: 0 -3px #888888;
+		background-color: lightgrey;
+		color: purple;
+		transition: 1s;
+		border: purple;
+	}
+}
+.beach_picture {
+	@include imageProperties(url("../images/beach.png"), cover, center, no-repeat);
+	height: 350px;
+	@include flexBox(row,center,center,nowrap);
+	.column {
+		width: 500px;
+	}
+	p {
+		color: white;
+		font-size: 30px;
+	}
+}
+/*section "Our team"*/
+.team {
+	background-color: white;
+	@include flexBox(row,center,initial,nowrap);
+	height: 800px;
+	.main_width {
+	@include flexBox(column,space-around,center,nowrap);
+	}
+}
+.team_first_row {
+	@include imageProperties(url("../images/our_team.png"), contain, center, no-repeat);
+	@include sizePage(220px,75px);
+}
+.team_second_row {
+	@include flexBox(row,center,initial,nowrap);
+}
+.button_left {
+	@include imageProperties(url("../images/left_arrow.png"), contain, center, no-repeat);
+	@include sizePage(60px,65px);
+	margin-right: 5px;
+}
+.button_right {
+	@include imageProperties(url("../images/right_arrow.png"), contain, center, no-repeat);
+	@include sizePage(60px,65px);
+	margin-left: 5px;
+}
+.team_third_row {
+	height: 40%;
+	@include flexBox(row,space-around,center,nowrap);
+	width: 92%;
+}
+.team_column {
+	@include flexBox(column,space-between,center,nowrap);
+	align-items: center;
+	text-align: center;
+
+}
+.circle {
+	border-radius: 50%;
+	@include sizePage(200px,200px);	
+	background-color: grey;
+}
+
+.social_media_icons {
+	@include flexBox(row,space-between,center,nowrap);
+	width: 35%;
+}
+.FB {
+	@include imageProperties(url("../images/fb_icon.png"), contain, center, no-repeat);
+	@include sizePage(45px,45px);
+	&:hover {
+		background-image: url("../images/purple_fb_icon.png");
+	}
+}
+.Google {
+	@include imageProperties(url("../images/google_icon.png"), contain, center, no-repeat);
+	@include sizePage(45px,45px);
+	&:hover {
+		background-image: url("../images/purple_google_icon.png");
+	}
+}
+/*section "Our skills"*/
+.skills {
+	background-color: white;
+	@include flexBox(row,center,initial,nowrap);
+	height: 100%;
+	.main_width {
+		@include flexBox(column,space-around,center,nowrap);
+	}
+}
+.skills_first_row {
+	@include imageProperties(url("../images/our_skills.png"), contain, center, no-repeat);
+	margin-top: 5%;
+	@include sizePage(220px,75px);
+}
+.skills_second_row, .skills_third_row {
+	@include flexBox(row,center,initial,wrap);
+	width: 60%;
+	.margin {
+		margin-left: 25px;
+		text-align: center;
+	}
+}
+.skills_second_row {
+	margin-top: 5%;
+}
+.skills_third_row {
+	margin-bottom: 5%;
+}
+progress {
+	@include sizePage(300px,20px);
+	-webkit-appearance: none;
+   	appearance: none;
+}
+progress[value]::-webkit-progress-bar {
+  background-color: #eee;
+  border-radius: 2px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25) inset;
+}
+progress[value]::-webkit-progress-value {
+  background-color: purple;
+}
+/*section "Portfolio"*/
+.portfolio {
+	background-color: white;
+	@include flexBox(row,center,initial,nowrap);
+	height: 1100px;
+	.main_width {
+		@include flexBox(column,space-between,center,nowrap);
+	}
+}
+.portfolio_first_row {
+	@include imageProperties(url("../images/our_portfolio.png"), contain, center, no-repeat);
+	margin-top: 5%;
+	@include sizePage(220px,75px);
+	margin-bottom: 5%;
+}
+.portfolio_second_row{
+	@include flexBox(row,space-between,center,wrap);
+	width: 50%;
+	button {
+	margin-top: 5%;
+		@include sizePage(85px,40px);
+	}
+}
+.portfolio_third_row, {
+	@include flexBox(row,center,initial,wrap);
+	width: 100%;
+	.column {
+		@include sizePage(250px,300px);
+	}
+}
+.portfolio_third_row {
+	margin-top: 5%;
+}
+.portfolio_fourth_row {
+	margin-bottom: 5%;
+}
+.third_row_image {
+	@include imageProperties(url("../images/farm_road.png"), contain, center, no-repeat);
+	@include sizePage(200px,200px);
+}
+
+.mountain_road {
+	background-image: url("../images/mountain_road.png");
+}
+.new_york {
+	background-image: url("../images/New_York.png");
+}
+.port {
+	background-image: url("../images/port.png");
+}
+.boats {
+	background-image: url("../images/river_boats.png");
+}
+.bench {
+	background-image: url("../images/bench.png");
+}
+
+.portfolio_fifth_row {
+	margin-bottom: 5%;
+}
