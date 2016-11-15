@@ -4,4 +4,4 @@
 
 Technology used: <strong>HTML, SASS, JS, jQuery</strong>. Preview: <a href="https://michaldec1984.github.io/Bhagaskara-project/">"Bhagaskara"- website project</a>.
 
-Project is in progress (it needs some web search engines optimatization). Now it is best to see it on Chrome.
+Project is in progress (it needs some web search engines optimatization). Now it is best to see it on Chrome and Firefox.
