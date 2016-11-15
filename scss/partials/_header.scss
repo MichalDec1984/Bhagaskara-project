@@ -5,18 +5,19 @@ body {
 }
 .page_container {
 	@include sizePage(100%,100%);
-	max-width: 1400px;
+	width: 100%;
 	margin: auto;
 }
 
 .main_width {
 	width: 75%;
+	max-width: 1050px;
 }
 
 /*header*/
 header {
 	@include imageProperties(url("../images/header.png"), cover, center, no-repeat);
-	height: 900px;
+	height: 900px;;
 	@include flexBox(column,initial,center,nowrap);
 }
 .site_name {
