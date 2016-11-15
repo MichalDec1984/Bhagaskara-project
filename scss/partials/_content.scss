@@ -165,7 +165,7 @@ button {
 /*section "Our skills"*/
 .skills {
 	background-color: white;
-	@include flexBox(row,center,initial,nowrap);
+	@include flexBox(column,space-around,center,nowrap);
 	height: 100%;
 	.main_width {
 		@include flexBox(column,space-around,center,nowrap);
@@ -173,7 +173,7 @@ button {
 }
 .skills_first_row {
 	@include imageProperties(url("../images/our_skills.png"), contain, center, no-repeat);
-	margin-top: 5%;
+	margin-top: 50px;
 	@include sizePage(220px,75px);
 }
 .skills_second_row, .skills_third_row {
@@ -185,14 +185,16 @@ button {
 	}
 }
 .skills_second_row {
-	margin-top: 5%;
+	margin-top: 50px;
 }
 .skills_third_row {
-	margin-bottom: 5%;
+	margin-bottom: 50px;
 }
 progress {
 	@include sizePage(300px,20px);
 	-webkit-appearance: none;
+	-moz-appearance: none;
+	-ms-appearance: none;
    	appearance: none;
 }
 progress[value]::-webkit-progress-bar {
@@ -200,7 +202,23 @@ progress[value]::-webkit-progress-bar {
   border-radius: 2px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25) inset;
 }
+progress[value]::-moz-progress-bar {
+  background-color: purple;
+  border-radius: 2px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25) inset;
+}
+progress[value]::progress-bar {
+  background-color: #eee;
+  border-radius: 2px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25) inset;
+}
 progress[value]::-webkit-progress-value {
+  background-color: purple;
+}
+progress::-ms-fill {
+  background-color: purple;
+}
+progress[value]::progress-value {
   background-color: purple;
 }
 /*section "Portfolio"*/
@@ -214,15 +232,15 @@ progress[value]::-webkit-progress-value {
 }
 .portfolio_first_row {
 	@include imageProperties(url("../images/our_portfolio.png"), contain, center, no-repeat);
-	margin-top: 5%;
+	margin-top: 50px;
 	@include sizePage(220px,75px);
-	margin-bottom: 5%;
+	margin-bottom: 50px;
 }
 .portfolio_second_row{
 	@include flexBox(row,space-between,center,wrap);
 	width: 50%;
 	button {
-	margin-top: 5%;
+	margin-top: 10px;
 		@include sizePage(85px,40px);
 	}
 }
@@ -234,10 +252,10 @@ progress[value]::-webkit-progress-value {
 	}
 }
 .portfolio_third_row {
-	margin-top: 5%;
+	margin-top: 50px;
 }
 .portfolio_fourth_row {
-	margin-bottom: 5%;
+	margin-bottom: 50px;
 }
 .third_row_image {
 	@include imageProperties(url("../images/farm_road.png"), contain, center, no-repeat);
@@ -261,5 +279,5 @@ progress[value]::-webkit-progress-value {
 }
 
 .portfolio_fifth_row {
-	margin-bottom: 5%;
+	margin-bottom: 50px;
 }

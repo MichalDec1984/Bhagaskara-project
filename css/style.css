@@ -529,9 +529,9 @@ button {
   display: -ms-flexbox;
   display: -webkit-flex;
   display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: initial;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
   flex-wrap: nowrap;
   height: 100%; }
   .skills .main_width {
@@ -550,7 +550,7 @@ button {
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
-  margin-top: 5%;
+  margin-top: 50px;
   width: 220px;
   height: 75px; }
 
@@ -570,15 +570,17 @@ button {
     text-align: center; }
 
 .skills_second_row {
-  margin-top: 5%; }
+  margin-top: 50px; }
 
 .skills_third_row {
-  margin-bottom: 5%; }
+  margin-bottom: 50px; }
 
 progress {
   width: 300px;
   height: 20px;
   -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
   appearance: none; }
 
 progress[value]::-webkit-progress-bar {
@@ -586,7 +588,23 @@ progress[value]::-webkit-progress-bar {
   border-radius: 2px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25) inset; }
 
+progress[value]::-moz-progress-bar {
+  background-color: purple;
+  border-radius: 2px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25) inset; }
+
+progress[value]::progress-bar {
+  background-color: #eee;
+  border-radius: 2px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25) inset; }
+
 progress[value]::-webkit-progress-value {
+  background-color: purple; }
+
+progress::-ms-fill {
+  background-color: purple; }
+
+progress[value]::progress-value {
   background-color: purple; }
 
 /*section "Portfolio"*/
@@ -618,10 +636,10 @@ progress[value]::-webkit-progress-value {
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
-  margin-top: 5%;
+  margin-top: 50px;
   width: 220px;
   height: 75px;
-  margin-bottom: 5%; }
+  margin-bottom: 50px; }
 
 .portfolio_second_row {
   display: -webkit-box;
@@ -635,7 +653,7 @@ progress[value]::-webkit-progress-value {
   flex-wrap: wrap;
   width: 50%; }
   .portfolio_second_row button {
-    margin-top: 5%;
+    margin-top: 10px;
     width: 85px;
     height: 40px; }
 
@@ -655,10 +673,10 @@ progress[value]::-webkit-progress-value {
     height: 300px; }
 
 .portfolio_third_row {
-  margin-top: 5%; }
+  margin-top: 50px; }
 
 .portfolio_fourth_row {
-  margin-bottom: 5%; }
+  margin-bottom: 50px; }
 
 .third_row_image {
   background-image: url("../images/farm_road.png");
@@ -684,7 +702,7 @@ progress[value]::-webkit-progress-value {
   background-image: url("../images/bench.png"); }
 
 .portfolio_fifth_row {
-  margin-bottom: 5%; }
+  margin-bottom: 50px; }
 
 /*section "Footer"*/
 footer {
@@ -799,8 +817,8 @@ textarea {
       width: 100%; }
 
 .footer_third_row {
-  margin-top: 5%;
-  margin-bottom: 5%;
+  margin-top: 50px;
+  margin-bottom: 50px;
   display: flex;
   justify-content: center;
   align-items: center; }
@@ -821,7 +839,14 @@ textarea {
     .about_us .about_us_first_row {
       margin-top: 3%; }
     .about_us .monitors {
-      width: 50vw; }
+      width: 50vw; } }
+    @media (max-width: 1245px) and (max-width: 882px) {
+      .about_us .monitors {
+        height: 40vh; } }
+    @media (max-width: 1245px) and (max-width: 441px) {
+      .about_us .monitors {
+        height: 20vh; } }
+@media (max-width: 1245px) {
     .about_us .learn_more {
       margin-bottom: 3%;
       /*.learn_more screens under 290px*/
@@ -834,9 +859,6 @@ textarea {
         font-size: 60%; }
         .about_us .learn_more button {
           width: 50vw; } }
-    @media (max-width: 1245px) and (max-width: 140px) {
-      .about_us .learn_more {
-        height: 50vh; } }
 
 @media (max-width: 1245px) {
   .portfolio {
@@ -855,7 +877,7 @@ textarea {
   .portfolio_second_row {
     justify-content: center; }
     .portfolio_second_row button {
-      margin: 4%; } }
+      margin: 10px; } }
 /*screens under 773px*/
 @media (max-width: 773px) {
   progress {
@@ -878,5 +900,8 @@ textarea {
     @media (max-width: 773px) and (max-width: 200px) {
       .footer_second_row .contact_container p {
         font-size: 70%; } }
+  @media (max-width: 773px) and (max-width: 515px) {
+    .footer_second_row .contact_container {
+      height: 100%; } }
 
 /*# sourceMappingURL=style.css.map */

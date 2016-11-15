@@ -17,6 +17,12 @@
 		}
 		.monitors {
 			width: 50vw;
+			@media (max-width: 882px) {
+				height: 40vh;	
+			}
+			@media (max-width: 441px) {
+				height: 20vh;	
+			}
 		}
 		.learn_more {
 			margin-bottom: 3%;
@@ -31,9 +37,7 @@
 				}
 			}
 			/*.learn_more screens under 140px*/
-			@media (max-width: 140px) {
-				height: 50vh;
-			}
+			
 		}
 	}
 	.portfolio {
@@ -60,7 +64,7 @@
 	.portfolio_second_row {
 		justify-content: center;
 		button {
-			margin: 4%;
+			margin: 10px;
 		}
 	}
 }
@@ -91,6 +95,11 @@
 				p {
 					font-size: 70%;
 				}
+			}
+		}
+		@media (max-width: 515px) {
+			.contact_container {
+					height: 100%;
 			}
 		}	
 	}
