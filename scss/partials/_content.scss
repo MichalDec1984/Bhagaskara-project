@@ -4,7 +4,7 @@
 	@include flexBox(row,center,initial,nowrap);
 }
 .four_icons{
-	margin: 5% 0 5% 0;
+	margin: 50px 0 50px 0;
 	height: 100%;
 	@include flexBox(row,space-between,center,wrap);
 }
