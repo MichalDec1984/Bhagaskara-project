@@ -154,6 +154,7 @@ nav {
     text-transform: uppercase; }
   nav ul {
     list-style-type: none;
+    padding-left: 0px;
     display: -webkit-box;
     display: -moz-box;
     display: -ms-flexbox;
@@ -209,25 +210,11 @@ nav {
   left: 0;
   background-color: white;
   opacity: 0.9;
-  z-index: 2;
-  /*ul {
-  	@include sizePage(100%,100%);
-  	li {
-  	margin-left: 3%;
-  	}
-  }*/ }
+  z-index: 2; }
   .sticky:hover {
     opacity: 1;
     background-color: white; }
 
-/*.sticky1{
-    position: fixed;
-    top: 0;
-    left: 0;
-  	text-align: center;
-   	width: 100%;
-   	background-color: white;
-}*/
 /*section "Build with love"*/
 .first_section {
   background-color: #f2f2f2;
@@ -254,6 +241,20 @@ nav {
   align-items: center;
   flex-wrap: wrap; }
 
+.first_section_column {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex-wrap: nowrap;
+  width: 200px;
+  height: 325px;
+  margin: 2% 1% 2% 1%;
+  text-align: center; }
+
 .column {
   display: -webkit-box;
   display: -moz-box;
@@ -265,7 +266,7 @@ nav {
   align-items: center;
   flex-wrap: nowrap;
   width: 200px;
-  height: 300px;
+  height: 325px;
   margin: 0 1% 0 1%;
   text-align: center; }
 
@@ -275,7 +276,9 @@ nav {
   background-position: center;
   background-repeat: no-repeat;
   width: 157px;
-  height: 167px; }
+  height: 167px;
+  margin-left: auto;
+  margin-right: auto; }
   .heart_icon:hover {
     background-image: url("../images/purple_heart.png");
     transition: 0.6s; }
@@ -286,7 +289,9 @@ nav {
   background-position: center;
   background-repeat: no-repeat;
   width: 157px;
-  height: 167px; }
+  height: 167px;
+  margin-left: auto;
+  margin-right: auto; }
   .diamond_icon:hover {
     background-image: url("../images/purple_diamond.png");
     transition: 0.6s; }
@@ -297,7 +302,9 @@ nav {
   background-position: center;
   background-repeat: no-repeat;
   width: 157px;
-  height: 167px; }
+  height: 167px;
+  margin-left: auto;
+  margin-right: auto; }
   .bin_icon:hover {
     background-image: url("../images/purple_cup.png");
     transition: 0.6s; }
@@ -308,7 +315,9 @@ nav {
   background-position: center;
   background-repeat: no-repeat;
   width: 157px;
-  height: 167px; }
+  height: 167px;
+  margin-left: auto;
+  margin-right: auto; }
   .phone_icon:hover {
     background-image: url("../images/purple_phone.png");
     transition: 0.6s; }
@@ -576,58 +585,30 @@ button {
   width: 220px;
   height: 75px; }
 
-.skills_second_row, .skills_third_row {
-  display: -webkit-box;
-  display: -moz-box;
-  display: -ms-flexbox;
-  display: -webkit-flex;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: initial;
-  flex-wrap: wrap;
-  width: 60%; }
-  .skills_second_row .margin, .skills_third_row .margin {
-    margin-left: 25px;
-    text-align: center; }
-
 .skills_second_row {
-  margin-top: 50px; }
-
-.skills_third_row {
+  margin-top: 50px;
   margin-bottom: 50px; }
 
-progress {
+.progressBackground {
   width: 300px;
   height: 20px;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  -ms-appearance: none;
-  appearance: none; }
+  background-color: #eaeaea; }
 
-progress[value]::-webkit-progress-bar {
-  background-color: #eee;
-  border-radius: 2px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25) inset; }
-
-progress[value]::-moz-progress-bar {
+.progressAnimation {
+  width: 0;
+  height: 100%;
   background-color: purple;
-  border-radius: 2px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25) inset; }
+  transition: width 3s; }
 
-progress[value]::progress-bar {
-  background-color: #eee;
-  border-radius: 2px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25) inset; }
+.progressAnimation {
+  width: 0;
+  height: 100%;
+  background-color: purple;
+  transition: width 3s; }
 
-progress[value]::-webkit-progress-value {
-  background-color: purple; }
-
-progress::-ms-fill {
-  background-color: purple; }
-
-progress[value]::progress-value {
-  background-color: purple; }
+.skills_progress_row {
+  text-align: center;
+  text-transform: uppercase; }
 
 /*section "Portfolio"*/
 .portfolio {
@@ -785,7 +766,8 @@ input {
   width: 96%;
   height: 65px;
   border: 1px solid purple;
-  padding-left: 5px; }
+  padding-left: 5px;
+  font-family: Lato; }
 
 textarea {
   width: 96%;
@@ -794,7 +776,8 @@ textarea {
   resize: none;
   padding-left: 5px;
   padding-top: 20px;
-  margin-bottom: 25px; }
+  margin-bottom: 25px;
+  font-family: Lato; }
 
 .submit {
   width: 200px;
@@ -811,13 +794,16 @@ textarea {
     transition: 1s; }
 
 ::-webkit-input-placeholder {
-  font-size: 20px; }
+  font-size: 20px;
+  font-family: Lato; }
 
 ::-moz-placeholder {
-  font-size: 20px; }
+  font-size: 20px;
+  font-family: Lato; }
 
 ::-ms-input-placeholder {
-  font-size: 20px; }
+  font-size: 20px;
+  font-family: Lato; }
 
 .footer_first_row {
   background-image: url("../images/get_in_touch.png");
@@ -854,7 +840,6 @@ textarea {
     .footer_second_row .contact_container p {
       margin-top: 20px;
       font-size: 18px;
-      text-align: justify;
       display: block;
       width: 100%; }
     .footer_second_row .contact_container .contact_paragraph {
@@ -881,7 +866,8 @@ textarea {
   .about_us {
     height: 100%; }
     .about_us .about_us_first_row {
-      margin-top: 3%; }
+      margin-top: 50px;
+      margin-bottom: 50px; }
     .about_us .monitors {
       width: 50vw; } }
     @media (max-width: 1245px) and (max-width: 882px) {
@@ -892,9 +878,11 @@ textarea {
         height: 20vh; } }
 @media (max-width: 1245px) {
     .about_us .learn_more {
-      margin-bottom: 3%;
-      /*.learn_more screens under 290px*/
-      /*.learn_more screens under 140px*/ } }
+      margin-bottom: 50px;
+      /*.learn_more screens under 290px*/ }
+      .about_us .learn_more p {
+        margin-top: 50px;
+        margin-bottom: 50px; } }
     @media (max-width: 1245px) and (max-width: 441px) {
       .about_us .learn_more {
         width: 60vw; } }

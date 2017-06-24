@@ -251,3 +251,22 @@ $(function() {
     	owl.trigger('owl.prev');
 	})
 });
+//progres bar animation on scroll
+$(function() {
+	var $animation_elements = $('.progressAnimation');
+	$(window).on('scroll resize', function(){
+		var viewportHeight = document.documentElement.clientHeight;
+		$animation_elements.each(function() {
+			var $element = $(this);
+			var position = this.getBoundingClientRect();
+			if (position.top > viewportHeight || position.bottom < 0) {
+				this.inView && $element.css({ width: 0 });
+				this.inView = false;
+			} else {
+				!this.inView && $element.css({ width: 3 * $element.data("percent") });
+				this.inView = true;
+			}
+    	});
+  	});
+});
+

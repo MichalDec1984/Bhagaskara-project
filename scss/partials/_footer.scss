@@ -24,6 +24,7 @@ input {
 	@include sizePage(96%,65px);
  	border: 1px solid purple;
  	padding-left: 5px;
+ 	font-family: Lato;
 }
 textarea  {
 	@include sizePage(96%,185px);;
@@ -32,6 +33,7 @@ textarea  {
  	padding-left: 5px;
  	padding-top: 20px;
  	margin-bottom: 25px;
+ 	font-family: Lato;
 }
 .submit {
 	@include sizePage(200px,50px);
@@ -49,15 +51,15 @@ textarea  {
 }
 ::-webkit-input-placeholder {
 	font-size: 20px;
- 	
+	font-family: Lato;	
 }
 ::-moz-placeholder {
  	font-size: 20px;
- 	
+ 	font-family: Lato;	
 } 
 ::-ms-input-placeholder { 
 	font-size: 20px;
- 	
+	font-family: Lato;	
 }
 .footer_first_row {
 	@include imageProperties(url("../images/get_in_touch.png"), contain, center, no-repeat);
@@ -73,7 +75,6 @@ textarea  {
 		p {
 			margin-top: 20px;
 			font-size: 18px;
-			text-align: justify;
 			display: block;
 			width: 100%;
 		}

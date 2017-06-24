@@ -8,15 +8,24 @@
 	height: 100%;
 	@include flexBox(row,space-between,center,wrap);
 }
+
+.first_section_column {
+	@include flexBox(column,center,null,nowrap);
+	@include sizePage(200px,325px);
+	margin: 2% 1% 2% 1%;
+	text-align: center;
+}
 .column {
 	@include flexBox(column,center,center,nowrap);
-	@include sizePage(200px,300px);
+	@include sizePage(200px,325px);
 	margin: 0 1% 0 1%;
 	text-align: center;
 }
 .heart_icon {
 	@include imageProperties(url("../images/grey_heart.png"), contain, center, no-repeat);
 	@include sizePage(157px,167px);
+	margin-left: auto;
+	margin-right: auto;
 	&:hover {
 		background-image: url("../images/purple_heart.png");
 		transition: 0.6s;
@@ -25,6 +34,8 @@
 .diamond_icon {
 	@include imageProperties(url("../images/grey_diamond.png"), contain, center, no-repeat);
 	@include sizePage(157px,167px);
+	margin-left: auto;
+	margin-right: auto;
 	&:hover {
 		background-image: url("../images/purple_diamond.png");
 		transition: 0.6s;
@@ -33,6 +44,8 @@
 .bin_icon {
 	@include imageProperties(url("../images/grey_cup.png"), contain, center, no-repeat);
 	@include sizePage(157px,167px);
+	margin-left: auto;
+	margin-right: auto;
 	&:hover {
 		background-image: url("../images/purple_cup.png");
 		transition: 0.6s;
@@ -41,6 +54,8 @@
 .phone_icon {
 	@include imageProperties(url("../images/grey_phone.png"), contain, center, no-repeat);
 	@include sizePage(157px,167px);
+	margin-left: auto;
+	margin-right: auto;
 	&:hover {
 		background-image: url("../images/purple_phone.png");
 		transition: 0.6s;
@@ -136,14 +151,12 @@ button {
 	@include flexBox(column,space-between,center,nowrap);
 	align-items: center;
 	text-align: center;
-
 }
 .circle {
 	border-radius: 50%;
 	@include sizePage(200px,200px);	
 	@include imageProperties(url("../images/team1.jpg"), cover, center, no-repeat);
 }
-
 .social_media_icons {
 	@include flexBox(row,space-between,center,nowrap);
 	width: 35%;
@@ -176,50 +189,30 @@ button {
 	margin-top: 50px;
 	@include sizePage(220px,75px);
 }
-.skills_second_row, .skills_third_row {
-	@include flexBox(row,center,initial,wrap);
-	width: 60%;
-	.margin {
-		margin-left: 25px;
-		text-align: center;
-	}
-}
 .skills_second_row {
 	margin-top: 50px;
-}
-.skills_third_row {
 	margin-bottom: 50px;
 }
-progress {
-	@include sizePage(300px,20px);
-	-webkit-appearance: none;
-	-moz-appearance: none;
-	-ms-appearance: none;
-   	appearance: none;
+.progressBackground {
+            width:300px;
+            height:20px;
+            background-color:#eaeaea;
 }
-progress[value]::-webkit-progress-bar {
-  background-color: #eee;
-  border-radius: 2px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25) inset;
+.progressAnimation {
+            width:0;
+            height:100%;
+            background-color:purple;
+            transition: width 3s;
 }
-progress[value]::-moz-progress-bar {
-  background-color: purple;
-  border-radius: 2px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25) inset;
+.progressAnimation {
+            width:0;
+            height:100%;
+            background-color:purple;
+            transition: width 3s;
 }
-progress[value]::progress-bar {
-  background-color: #eee;
-  border-radius: 2px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25) inset;
-}
-progress[value]::-webkit-progress-value {
-  background-color: purple;
-}
-progress::-ms-fill {
-  background-color: purple;
-}
-progress[value]::progress-value {
-  background-color: purple;
+.skills_progress_row {
+	text-align: center;
+	text-transform: uppercase;
 }
 /*section "Portfolio"*/
 .portfolio {
@@ -261,7 +254,6 @@ progress[value]::progress-value {
 	@include imageProperties(url("../images/farm_road.png"), contain, center, no-repeat);
 	@include sizePage(200px,200px);
 }
-
 .mountain_road {
 	background-image: url("../images/mountain_road.png");
 }
@@ -277,11 +269,9 @@ progress[value]::progress-value {
 .bench {
 	background-image: url("../images/bench.png");
 }
-
 .portfolio_fifth_row {
 	margin-bottom: 50px;
 }
-
 .fullScreen {
     position: fixed;
     width: 80vw;
@@ -295,7 +285,6 @@ progress[value]::progress-value {
     display: block;
     //margin: auto;
 }
-
 .fullScreen img {
     display: block;
     margin: 50px;
