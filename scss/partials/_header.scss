@@ -52,14 +52,31 @@ header {
 	@include imageProperties(url("../images/grey_oval.png"), contain, center, no-repeat);
 	@include sizePage(157px,167px);
 	@include flexBox(column,center,center,nowrap);
-	color: white;
 	img {
 		@include sizePage(51px,51px);
+	}
+	a {
+		.image_margin {
+			margin-left: 5px;
+		}
+		&:link {
+			text-decoration: none;
+			color: white;
+		}	
+		&:visited {
+			color: white;
+		}
 	}
 	&:hover {
 		background-image: url("../images/purple_oval.png");
 		transition: 0.6s;
 	}
+	label {
+		margin-top: 5px;
+		text-align: center;
+		cursor: pointer;
+	}
+
 }
 .scroll_down {
 	margin-top: 50px;
@@ -77,15 +94,26 @@ header {
 /*nav*/
 nav {
 	background-color: white;
-	@include sizePage(100%,100%);
+	@include sizePage(100%,null);
 	@include flexBox(row,center,center,nowrap);
 	.main_width {
 		display: flex;
+		flex-direction: row;
 		justify-content: space-between;
 		align-items: center;
+		height: 70px;
+		.nav_header {
+			display: flex;
+			flex-direction: row;
+			justify-content: space-between;
+			align-items: center;
+		}
+
 	}
 .menu {
 	z-index:1;
+	text-transform: uppercase;
+
 }
 	ul {	
 		list-style-type: none;
@@ -106,7 +134,7 @@ nav {
 }
 .rwd_menu {
 	@include imageProperties(url("../images/hamburger.png"), contain, center, no-repeat);
-	@include sizePage(10vw,5vh);
+	@include sizePage(25px,25px);
 	z-index:2;
 }
 .hidden {
@@ -116,7 +144,7 @@ nav {
 	display: inline-block !important;
 }
 .horizontal > ul {
-		margin-top: 20px;
+		margin-top: 1px;
 		li {
 			display:inline-block;
 			margin-left: 20px;
@@ -124,13 +152,14 @@ nav {
 	}
 .sticky + .horizontal {
 		ul {
-			margin-top: 46px;
+			margin-top: 20px;
 		}
 		li {	
 			display:inline-block;
 			margin-left: 20px;
 		}
-	}
+}
+
 @media all and (min-width: 761px) {
 	.horizontal > ul {
 		li {
@@ -143,25 +172,26 @@ nav {
     top: 0;
     left: 0;
    	background-color: white;
-   	opacity: 1;
-   	width: 100%;
-   	ul {
+   	opacity: 0.9;
+   	//width: 100%;
+   	z-index: 2;
+   	/*ul {
    		@include sizePage(100%,100%);
    		li {
    		margin-left: 3%;
    		}
-   	}
+   	}*/
    	&:hover {
    		opacity: 1;
    		background-color: white;
    		//border: 1px solid purple;
    	}
 }
-.sticky1{
+/*.sticky1{
     position: fixed;
     top: 0;
     left: 0;
   	text-align: center;
    	width: 100%;
    	background-color: white;
-}
+}*/

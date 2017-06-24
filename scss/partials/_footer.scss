@@ -13,6 +13,9 @@ footer {
 .error_message1, .error_message2, .error_message3 {
 	color: red;
 }
+.error_message2 {
+	margin-bottom: 25px;
+}
 label, input {
 	display: block;
  }
@@ -20,12 +23,15 @@ input {
 	margin: 25px 0;
 	@include sizePage(96%,65px);
  	border: 1px solid purple;
+ 	padding-left: 5px;
 }
 textarea  {
-	@include sizePage(96%,185px);
- 	margin-top: 25px;
+	@include sizePage(96%,185px);;
  	border: 1px solid purple;
  	resize: none;
+ 	padding-left: 5px;
+ 	padding-top: 20px;
+ 	margin-bottom: 25px;
 }
 .submit {
 	@include sizePage(200px,50px);
@@ -41,6 +47,18 @@ textarea  {
 		transition: 1s;
 	}
 }
+::-webkit-input-placeholder {
+	font-size: 20px;
+ 	
+}
+::-moz-placeholder {
+ 	font-size: 20px;
+ 	
+} 
+::-ms-input-placeholder { 
+	font-size: 20px;
+ 	
+}
 .footer_first_row {
 	@include imageProperties(url("../images/get_in_touch.png"), contain, center, no-repeat);
 	@include sizePage(220px,75px);
@@ -51,7 +69,7 @@ textarea  {
 	@include flexBox(row,space-between,initial,nowrap);
 	.contact_container {
 		@include sizePage(40%,20%);
-		@include flexBox(column,space-between,initial,nowrap);
+		@include flexBox(column,space-around,initial,nowrap);
 		p {
 			margin-top: 20px;
 			font-size: 18px;
@@ -59,16 +77,7 @@ textarea  {
 			display: block;
 			width: 100%;
 		}
-		.social_media_icons {
-			margin-top: 5%;
-			width: 80%;
-			.Twitter {
-				@include imageProperties(url("../images/twitter.png"), contain, center, no-repeat);
-			}
-			.FB, .Google, .Twitter {
-				@include sizePage(60px,60px);
-			}
-		}
+	
 		.contact_paragraph {
 			width: 100%;
 		}

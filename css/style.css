@@ -83,14 +83,24 @@ header {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  flex-wrap: nowrap;
-  color: white; }
+  flex-wrap: nowrap; }
   .buttons_bgr_image img {
     width: 51px;
     height: 51px; }
+  .buttons_bgr_image a .image_margin {
+    margin-left: 5px; }
+  .buttons_bgr_image a:link {
+    text-decoration: none;
+    color: white; }
+  .buttons_bgr_image a:visited {
+    color: white; }
   .buttons_bgr_image:hover {
     background-image: url("../images/purple_oval.png");
     transition: 0.6s; }
+  .buttons_bgr_image label {
+    margin-top: 5px;
+    text-align: center;
+    cursor: pointer; }
 
 .scroll_down {
   margin-top: 50px;
@@ -119,7 +129,6 @@ header {
 nav {
   background-color: white;
   width: 100%;
-  height: 100%;
   display: -webkit-box;
   display: -moz-box;
   display: -ms-flexbox;
@@ -131,10 +140,18 @@ nav {
   flex-wrap: nowrap; }
   nav .main_width {
     display: flex;
+    flex-direction: row;
     justify-content: space-between;
-    align-items: center; }
+    align-items: center;
+    height: 70px; }
+    nav .main_width .nav_header {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center; }
   nav .menu {
-    z-index: 1; }
+    z-index: 1;
+    text-transform: uppercase; }
   nav ul {
     list-style-type: none;
     display: -webkit-box;
@@ -161,8 +178,8 @@ nav {
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
-  width: 10vw;
-  height: 5vh;
+  width: 25px;
+  height: 25px;
   z-index: 2; }
 
 .hidden {
@@ -172,13 +189,13 @@ nav {
   display: inline-block !important; }
 
 .horizontal > ul {
-  margin-top: 20px; }
+  margin-top: 1px; }
   .horizontal > ul li {
     display: inline-block;
     margin-left: 20px; }
 
 .sticky + .horizontal ul {
-  margin-top: 46px; }
+  margin-top: 20px; }
 .sticky + .horizontal li {
   display: inline-block;
   margin-left: 20px; }
@@ -191,25 +208,26 @@ nav {
   top: 0;
   left: 0;
   background-color: white;
-  opacity: 1;
-  width: 100%; }
-  .sticky ul {
-    width: 100%;
-    height: 100%; }
-    .sticky ul li {
-      margin-left: 3%; }
+  opacity: 0.9;
+  z-index: 2;
+  /*ul {
+  	@include sizePage(100%,100%);
+  	li {
+  	margin-left: 3%;
+  	}
+  }*/ }
   .sticky:hover {
     opacity: 1;
     background-color: white; }
 
-.sticky1 {
-  position: fixed;
-  top: 0;
-  left: 0;
-  text-align: center;
-  width: 100%;
-  background-color: white; }
-
+/*.sticky1{
+    position: fixed;
+    top: 0;
+    left: 0;
+  	text-align: center;
+   	width: 100%;
+   	background-color: white;
+}*/
 /*section "Build with love"*/
 .first_section {
   background-color: #f2f2f2;
@@ -488,7 +506,10 @@ button {
   border-radius: 50%;
   width: 200px;
   height: 200px;
-  background-color: grey; }
+  background-image: url("../images/team1.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat; }
 
 .social_media_icons {
   display: -webkit-box;
@@ -705,6 +726,24 @@ progress[value]::progress-value {
 .portfolio_fifth_row {
   margin-bottom: 50px; }
 
+.fullScreen {
+  position: fixed;
+  width: 80vw;
+  height: 80vh;
+  left: 400px;
+  top: 40px;
+  z-index: 1;
+  background: rgba(255, 255, 255, 0.7); }
+
+.fullScreen .close {
+  display: block; }
+
+.fullScreen img {
+  display: block;
+  margin: 50px;
+  width: 500px;
+  height: 500px; }
+
 /*section "Footer"*/
 footer {
   height: 100%;
@@ -735,6 +774,9 @@ footer {
 .error_message1, .error_message2, .error_message3 {
   color: red; }
 
+.error_message2 {
+  margin-bottom: 25px; }
+
 label, input {
   display: block; }
 
@@ -742,14 +784,17 @@ input {
   margin: 25px 0;
   width: 96%;
   height: 65px;
-  border: 1px solid purple; }
+  border: 1px solid purple;
+  padding-left: 5px; }
 
 textarea {
   width: 96%;
   height: 185px;
-  margin-top: 25px;
   border: 1px solid purple;
-  resize: none; }
+  resize: none;
+  padding-left: 5px;
+  padding-top: 20px;
+  margin-bottom: 25px; }
 
 .submit {
   width: 200px;
@@ -764,6 +809,15 @@ textarea {
     background-color: white;
     color: purple;
     transition: 1s; }
+
+::-webkit-input-placeholder {
+  font-size: 20px; }
+
+::-moz-placeholder {
+  font-size: 20px; }
+
+::-ms-input-placeholder {
+  font-size: 20px; }
 
 .footer_first_row {
   background-image: url("../images/get_in_touch.png");
@@ -794,7 +848,7 @@ textarea {
     display: -webkit-flex;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: initial;
     flex-wrap: nowrap; }
     .footer_second_row .contact_container p {
@@ -803,17 +857,6 @@ textarea {
       text-align: justify;
       display: block;
       width: 100%; }
-    .footer_second_row .contact_container .social_media_icons {
-      margin-top: 5%;
-      width: 80%; }
-      .footer_second_row .contact_container .social_media_icons .Twitter {
-        background-image: url("../images/twitter.png");
-        background-size: contain;
-        background-position: center;
-        background-repeat: no-repeat; }
-      .footer_second_row .contact_container .social_media_icons .FB, .footer_second_row .contact_container .social_media_icons .Google, .footer_second_row .contact_container .social_media_icons .Twitter {
-        width: 60px;
-        height: 60px; }
     .footer_second_row .contact_container .contact_paragraph {
       width: 100%; }
 
@@ -872,7 +915,14 @@ textarea {
 @media (max-width: 1050px) {
   nav .main_width {
     flex-direction: column;
-    justify-content: space-between; } }
+    justify-content: space-between;
+    height: 100%; }
+    nav .main_width .nav_header {
+      margin-top: 10px;
+      margin-bottom: 10px;
+      width: 100%; }
+  nav .menu {
+    width: 100%; } }
 /*screens under 900px*/
 @media (max-width: 900px) {
   .portfolio_second_row {

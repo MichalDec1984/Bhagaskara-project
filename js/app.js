@@ -4,14 +4,39 @@ document.addEventListener("DOMContentLoaded", function() {
 	pageLogo.addEventListener("click", function(event) {
 		location.reload()
 	});
-//scroll down after clicking a button
-	var button = document.querySelector(".scroll_down");
-	button.addEventListener("click", function(event) {
-		console.log("Hurra! Działa!");
-    	document.querySelector('nav').scrollIntoView({ 
-  			behavior: 'smooth' 
-		});
-	});
+//smooth scroller
+	function scroll(toElement, speed) {
+  		var windowObject = window;
+  		var windowPosition = windowObject.pageYOffset;
+  		var pointer = toElement.getAttribute('href').slice(1);
+  		var element = document.getElementById(pointer);
+  		var elementOffset = element.offsetTop;
+  		var counter = setInterval(function() {
+    		windowPosition;
+    		if (windowPosition > elementOffset) {
+      			windowObject.scrollTo(0, windowPosition);
+      			windowPosition -= speed;
+      			if (windowPosition <= elementOffset) { 
+        			clearInterval(counter);
+        			windowObject.scrollTo(0, elementOffset);
+      			}
+    		} else { // from top to bottom
+      			windowObject.scrollTo(0, windowPosition);
+      			windowPosition += speed;
+				if (windowPosition >= elementOffset) {
+        			clearInterval(counter);
+        			windowObject.scrollTo(0, elementOffset);
+      			}
+    		}
+		}, 1);
+	}
+	var navPointer = document.getElementsByClassName('nav__anchor');
+	for (i = 0; i < navPointer.length; i++) {
+  		navPointer[i].addEventListener('click', function(e) {
+    		scroll(this, 12);
+    		e.preventDefault();
+  		});
+	}
 //RWD menu
 	var hamburgerMenu = document.querySelector(".rwd_menu");
 	var menu = document.querySelector(".menu");
@@ -185,19 +210,16 @@ document.addEventListener("DOMContentLoaded", function() {
 //sticky menu 
 $(function() {
     console.log("działa");
-    var nav = $('nav');
-    var menu = nav.find('.menu');
+    var menu = $('nav');
     var hamburgerMenu = $(".rwd_menu");
     var positionTop = menu.position().top;
     function sticky(){
         var scrollTopWindow = $(window).scrollTop();
         if (scrollTopWindow > positionTop){
             menu.addClass('sticky');
-            hamburgerMenu.addClass('sticky');
         }
         else {
             menu.removeClass('sticky');
-            hamburgerMenu.removeClass('sticky');
         }
     }
     $(window).on('scroll', function(){
