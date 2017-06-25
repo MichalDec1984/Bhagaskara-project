@@ -20,20 +20,20 @@ label, input {
 	display: block;
  }
 input {
-	margin: 25px 0;
-	@include sizePage(96%,65px);
+	margin: 25px 0 0 10px;
+	@include sizePage(92%,65px);
  	border: 1px solid purple;
  	padding-left: 5px;
  	font-family: Lato;
 }
 textarea  {
-	@include sizePage(96%,185px);;
+	@include sizePage(92%,185px);;
  	border: 1px solid purple;
  	resize: none;
- 	padding-left: 5px;
- 	padding-top: 20px;
+ 	padding: 20px 0 0 5px;
  	margin-bottom: 25px;
  	font-family: Lato;
+ 	margin-left: 10px;
 }
 .submit {
 	@include sizePage(200px,50px);
