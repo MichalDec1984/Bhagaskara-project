@@ -65,8 +65,8 @@ textarea  {
 .footer_first_row {
 	@include imageProperties(url("../images/get_in_touch.png"), contain, center, no-repeat);
 	@include sizePage(220px,75px);
-	margin-top: 5%;
-	margin-bottom: 5%;
+	margin-top: 25px;
+	margin-bottom: 25px;
 }
 .footer_second_row {
 	@include flexBox(row,center,initial,nowrap);
@@ -74,14 +74,13 @@ textarea  {
 		@include sizePage(100%,100%);
 		max-width: 700px;
 		max-height: 600px;
-		@include flexBox(column,space-between,initial,nowrap);
+		@include flexBox(column,null,initial,nowrap);
 		p {
 			margin-top: 25px;
 			font-size: 18px;
 			display: block;
 			width: 100%;
 		}
-	
 		.contact_paragraph {
 			width: 100%;
 		}

@@ -817,8 +817,8 @@ textarea {
   background-repeat: no-repeat;
   width: 220px;
   height: 75px;
-  margin-top: 5%;
-  margin-bottom: 5%; }
+  margin-top: 25px;
+  margin-bottom: 25px; }
 
 .footer_second_row {
   display: -webkit-box;
@@ -841,7 +841,6 @@ textarea {
     display: -webkit-flex;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
     align-items: initial;
     flex-wrap: nowrap; }
     .footer_second_row .contact_container p {
