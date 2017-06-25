@@ -11,8 +11,7 @@ body {
 
 .main_width {
   width: 100%;
-  max-width: 1050px;
-  overflow-x: hidden; }
+  max-width: 1050px; }
 
 /*header*/
 header {
@@ -335,7 +334,8 @@ nav {
   justify-content: center;
   align-items: initial;
   flex-wrap: nowrap;
-  height: 600px; }
+  max-height: 800px;
+  height: 100%; }
   .about_us .main_width {
     display: -webkit-box;
     display: -moz-box;
@@ -343,12 +343,12 @@ nav {
     display: -webkit-flex;
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
     flex-wrap: nowrap; }
 
 .about_us_first_row {
-  margin: 5% 0 5% 0;
+  margin: 50px 0 50px 0;
   background-image: url("../images/about_us.png");
   background-size: contain;
   background-position: center;
@@ -374,7 +374,8 @@ nav {
   background-repeat: no-repeat;
   width: 560px;
   height: 335px;
-  margin-right: 10px; }
+  margin-right: 10px;
+  margin-bottom: 25px; }
 
 .learn_more {
   display: -webkit-box;
@@ -383,7 +384,6 @@ nav {
   display: -webkit-flex;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
   align-items: initial;
   flex-wrap: nowrap;
   width: 300px; }

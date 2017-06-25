@@ -65,13 +65,14 @@
 .about_us {
 	background-color: white;
 	@include flexBox(row,center,initial,nowrap);
-	height: 600px;
+	max-height: 800px;
+	height: 100%;
 	.main_width {
-		@include flexBox(column,space-around,center,nowrap);
+		@include flexBox(column,space-between,center,nowrap);
 	}
 }
 .about_us_first_row {
-	margin: 5% 0 5% 0;
+	margin: 50px 0 50px 0;
 	@include imageProperties(url("../images/about_us.png"), contain, center, no-repeat);
 	@include sizePage(220px,75px);
 }
@@ -82,9 +83,10 @@
 	@include imageProperties(url("../images/monitor.png"), contain, center, no-repeat);
 	@include sizePage(560px,335px);
 	margin-right: 10px;
+	margin-bottom: 25px;
 }
 .learn_more {
-	@include flexBox(column,space-between,initial,nowrap);
+	@include flexBox(column,null,initial,nowrap);
 	width: 300px;
 	p {
 	margin-top: 0;
@@ -284,7 +286,6 @@ button {
     from {-webkit-transform:scale(0)} 
     to {-webkit-transform:scale(1)}
 }
-
 @keyframes zoom {
     from {transform:scale(0)} 
     to {transform:scale(1)}
