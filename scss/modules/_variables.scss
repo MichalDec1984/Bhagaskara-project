@@ -2,15 +2,12 @@
 	width: $width;
 	height: $height;
 }
-
-
 @mixin imageProperties($image,$size,$position,$repeat) {
 	background-image: $image;
 	background-size: $size;
 	background-position: $position;
 	background-repeat: $repeat;
 }
-
 @mixin flexBox($direction,$justify,$align,$wrap) {
     display: -webkit-box; 
     display: -moz-box;
@@ -21,4 +18,8 @@
 	justify-content: $justify;
 	align-items: $align;
 	flex-wrap: $wrap;
+	-ms-flex-direction: $direction;
+	-ms-justify-content: $justify;
+	-ms-align-items: $align;
+	-ms-flex-wrap: $wrap;
 }

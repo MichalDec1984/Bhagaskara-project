@@ -9,6 +9,8 @@ footer {
 .form {
 	max-width: 500px;
 	width: 100%;
+	margin-right: 10px;
+	@include flexBox(column,center,center,nowrap);
 }
 .error_message1, .error_message2, .error_message3 {
 	color: red;
@@ -20,20 +22,20 @@ label, input {
 	display: block;
  }
 input {
-	margin: 25px 0 0 10px;
-	@include sizePage(92%,65px);
+	margin: 25px 0 0 0;
+	@include sizePage(425px,65px);
+	margin-bottom: 25px;
  	border: 1px solid purple;
  	padding-left: 5px;
  	font-family: Lato;
 }
 textarea  {
-	@include sizePage(92%,185px);;
+	@include sizePage(425px,185px);
  	border: 1px solid purple;
  	resize: none;
  	padding: 20px 0 0 5px;
  	margin-bottom: 25px;
  	font-family: Lato;
- 	margin-left: 10px;
 }
 .submit {
 	@include sizePage(200px,50px);
@@ -72,7 +74,7 @@ textarea  {
 	@include flexBox(row,center,initial,nowrap);
 	.contact_container {
 		@include sizePage(100%,100%);
-		max-width: 700px;
+		max-width: 400px;
 		max-height: 600px;
 		@include flexBox(column,null,initial,nowrap);
 		p {
