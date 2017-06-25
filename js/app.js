@@ -78,51 +78,51 @@ document.addEventListener("DOMContentLoaded", function() {
 		if(document.querySelector(".three").style.display="none") {
 			document.querySelector(".three").style.display = "inherit";
 		}
-		if(document.querySelector(".fourth").style.display="none") {
-			document.querySelector(".fourth").style.display = "inherit";
+		if(document.querySelector(".four").style.display="none") {
+			document.querySelector(".four").style.display = "inherit";
 		}
-		if(document.querySelector(".fifth").style.display="none") {
-			document.querySelector(".fifth").style.display = "inherit";
+		if(document.querySelector(".five").style.display="none") {
+			document.querySelector(".five").style.display = "inherit";
 		}
-		if(document.querySelector(".sixth").style.display="none") {
-			document.querySelector(".sixth").style.display = "inherit";
+		if(document.querySelector(".six").style.display="none") {
+			document.querySelector(".six").style.display = "inherit";
 		}
 	});
 	webButton.addEventListener("click", function() {
 		document.querySelector(".one").style.display = "none";
-		document.querySelector(".fourth").style.display = "none";
+		document.querySelector(".four").style.display = "none";
 		if(document.querySelector(".two").style.display="none") {
 			document.querySelector(".two").style.display = "inherit";
 		}
 		if(document.querySelector(".three").style.display="none") {
 			document.querySelector(".three").style.display = "inherit";
 		}
-		if(document.querySelector(".fifth").style.display="none") {
-			document.querySelector(".fifth").style.display = "inherit";
+		if(document.querySelector(".five").style.display="none") {
+			document.querySelector(".five").style.display = "inherit";
 		}
-		if(document.querySelector(".sixth").style.display="none") {
-			document.querySelector(".sixth").style.display = "inherit";
+		if(document.querySelector(".six").style.display="none") {
+			document.querySelector(".six").style.display = "inherit";
 		}	
 	});
 	appButton.addEventListener("click", function() {
 		document.querySelector(".two").style.display = "none";
-		document.querySelector(".fifth").style.display = "none";
+		document.querySelector(".five").style.display = "none";
 		if(document.querySelector(".one").style.display="none") {
 			document.querySelector(".one").style.display = "inherit";
 		}
 		if(document.querySelector(".three").style.display="none") {
 			document.querySelector(".three").style.display = "inherit";
 		}
-		if(document.querySelector(".fourth").style.display="none") {
-			document.querySelector(".fourth").style.display = "inherit";
+		if(document.querySelector(".four").style.display="none") {
+			document.querySelector(".four").style.display = "inherit";
 		}
-		if(document.querySelector(".sixth").style.display="none") {
-			document.querySelector(".sixth").style.display = "inherit";
+		if(document.querySelector(".six").style.display="none") {
+			document.querySelector(".six").style.display = "inherit";
 		}	
 	});
 	iconsButton.addEventListener("click", function() {
 		document.querySelector(".three").style.display = "none";
-		document.querySelector(".sixth").style.display = "none";
+		document.querySelector(".six").style.display = "none";
 		if(document.querySelector(".one").style.display="none") {
 			document.querySelector(".one").style.display = "inherit";
 		}
@@ -130,11 +130,11 @@ document.addEventListener("DOMContentLoaded", function() {
 			document.querySelector(".two").style.display = "inherit";
 		}
 	
-		if(document.querySelector(".fourth").style.display="none") {
-			document.querySelector(".fourth").style.display = "inherit";
+		if(document.querySelector(".four").style.display="none") {
+			document.querySelector(".four").style.display = "inherit";
 		}
-		if(document.querySelector(".fifth").style.display="none") {
-			document.querySelector(".fifth").style.display = "inherit";
+		if(document.querySelector(".five").style.display="none") {
+			document.querySelector(".five").style.display = "inherit";
 		}	
 	});
 //form validation
@@ -206,6 +206,33 @@ document.addEventListener("DOMContentLoaded", function() {
 			this.submit();
 		}
   	});
+
+//modal image
+  	var list = document.querySelectorAll(".portfolio_third_row img");
+	var body = document.querySelector("body");
+	console.log(list);
+	console.log(body);
+ 	for (i = 0; i < list.length; i++) {
+ 		list[i].addEventListener("click", function () {
+			console.log( "działa");
+			console.log(this.getAttribute("src"));
+			var newDiv = document.createElement("div");
+			body.appendChild(newDiv);
+			newDiv.classList.add("fullScreen");
+			var bigImg = document.createElement("img");
+			newDiv.appendChild(bigImg);
+			bigImg.setAttribute("src",this.getAttribute("src"));
+			var button = document.createElement("button");
+			button.innerHTML = 'Close';
+			newDiv.appendChild(button);
+			button.classList.add("close");
+			var closeButton = document.querySelector(".close");
+			closeButton.addEventListener("click", function() {
+				var fullScreen = document.querySelector(".fullScreen");
+				body.removeChild(fullScreen);
+			});
+		});
+	};
 });
 //sticky menu 
 $(function() {

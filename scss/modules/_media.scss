@@ -1,4 +1,64 @@
-
+/*screens under 773px*/
+@media (max-width: 773px) {
+	progress {
+		width: 60vw;
+		height: 2vh;
+	}
+	footer {
+		width: 100%;
+		height: 100%;
+	}
+	.footer_second_row  {
+		flex-direction: column;
+		align-items: center;
+		form {
+			margin: 0 auto;
+			.submit {
+				margin: auto;
+			}
+		}
+		.contact_container {
+			width: 70%;
+			@media (max-width: 200px) {
+				p {
+					font-size: 70%;
+				}
+			}
+		}
+		@media (max-width: 515px) {
+			.contact_container {
+					height: 100%;
+			}
+		}	
+	}
+}
+/*screens under 900px*/
+@media (max-width: 900px) {
+	.portfolio_second_row {
+		justify-content: center;
+		button {
+			margin: 10px;
+		}
+	}
+}
+/*screens under 1050x*/
+@media (max-width: 1050px) {
+	nav {
+		.main_width {
+			flex-direction: column;
+			justify-content: space-between;	
+			height: 100%;
+			.nav_header {
+				margin-top: 10px;
+				margin-bottom: 10px;
+				width: 90%;
+			}
+		}
+		.menu {
+			width: 100%;
+		}
+	}
+}
 /*screens under 1245px*/
 @media (max-width: 1245px) {
 	header {
@@ -13,8 +73,6 @@
 	.about_us {
 		height: 100%;
 		.about_us_first_row {
-			margin-top: 50px;
-			margin-bottom: 50px;
 		}
 		.monitors {
 			width: 50vw;
@@ -26,8 +84,9 @@
 			}
 		}
 		.learn_more {
+			height: 100%;
 			p {
-				margin-top: 50px;
+				margin-top: 10px;
 				margin-bottom: 50px;
 			}
 			margin-bottom: 50px;
@@ -46,77 +105,8 @@
 	.portfolio {
 		height: 100%;
 	}
-
 	.footer {
 		width: 100%;
 		height: 100%;
-	}
-}
-/*screens under 1050x*/
-@media (max-width: 1050px) {
-
-	nav {
-		//height: 100%;
-		//max-height: 100px;
-		.main_width {
-			flex-direction: column;
-			justify-content: space-between;	
-			height: 100%;
-			.nav_header {
-				margin-top: 10px;
-				margin-bottom: 10px;
-				width: 100%;
-		
-			}
-		}
-		.menu {
-			width: 100%;
-			
-		}
-	}
-}
-/*screens under 900px*/
-@media (max-width: 900px) {
-	.portfolio_second_row {
-		justify-content: center;
-		button {
-			margin: 10px;
-		}
-	}
-}
-/*screens under 773px*/
-@media (max-width: 773px) {
-	progress {
-		width: 60vw;
-		height: 2vh;
-	}
-	footer {
-		width: 100%;
-		height: 100%;
-		.main_width {
-		}
-	}
-	.footer_second_row  {
-		flex-direction: column;
-		align-items: center;
-		form {
-			margin-right: 2%;
-			.submit {
-				margin: auto;
-			}
-		}
-		.contact_container {
-			width: 70%;
-			@media (max-width: 200px) {
-				p {
-					font-size: 70%;
-				}
-			}
-		}
-		@media (max-width: 515px) {
-			.contact_container {
-					height: 100%;
-			}
-		}	
 	}
 }

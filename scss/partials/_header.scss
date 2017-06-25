@@ -8,12 +8,11 @@ body {
 	width: 100%;
 	margin: auto;
 }
-
 .main_width {
-	width: 75%;
+	width: 100%;
 	max-width: 1050px;
+	overflow-x: hidden;
 }
-
 /*header*/
 header {
 	@include imageProperties(url("../images/header.png"), cover, center, no-repeat);
@@ -76,7 +75,6 @@ header {
 		text-align: center;
 		cursor: pointer;
 	}
-
 }
 .scroll_down {
 	margin-top: 50px;
